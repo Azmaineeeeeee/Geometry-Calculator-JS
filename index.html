@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Geometry Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.3/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+</head>
+
+<body class="m-10">
+    <header>
+    <div class="flex justify-between bg-cyan-100 p-5 mb-10 rounded-md">
+     <div>
+        <h1 class="text-3xl text-gray-950 font-bold">Interactive</h1>
+        <h2 class="text-2xl text-gray-400 font-medium">Geometry Genius</h2>
+     </div>
+     <div>
+        <button 
+        class="btn btn-primary w-24 bg-sky-500 text-xl text-white border-inherit mt-2">Blog</button>
+     </div>
+
+    </div>
+    </header>
+
+    <main>
+        <div>
+            <!-- Card Container -->
+            <div class="flex lg:flex-row flex-col gap-5">
+                <div class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4">
+                    <!-- Triangle Card -->
+                    <div id="triangle-body" class="card  bg-base-100 border-2 border-grey-700 px-4 py-2 rounded-md">
+                        <figure class="h-1/2">
+                            <img src="./images/triangle.png" alt="Triangle" />
+                        </figure>
+                        <div class="card-body space-y-1 h-1/2 mb-4">
+                            <div class="grid justify-center">
+                                <h2 class="card-title justify-center text-3xl">Triangle</h2>
+                                <p class="mt-2 text-base">Area(A) = 0.5 ✕ b ✕ h</p>
+                            </div>
+                            <div class="flex pb-5">
+                                <input placeholder="b"
+                                    class="max-h-8 w-1/2 rounded-[7px] border border-blue-gray-200 bg-gray-100 px-3 py-2.5 font-sans text-sm font-normal" id="triangle-base" />
+                                <h3 class="mx-2 mt-1">cm</h3>
+                                <input placeholder="h"
+                                    class="max-h-8 w-1/2 rounded-[7px] border border-blue-gray-200 bg-gray-100 px-3 py-2.5 font-sans text-sm font-normal" id="triangle-height" />
+                                <h3 class="mx-2 mt-1">cm</h3>
+                            </div>
+                            <h3 class="text-center text-2xl">Area: <span id="area-triangle">cm²</span></h3>
+                            <div class="card-actions justify-end">
+                                <button onclick="calculateTriangleArea()"
+                                    class="btn btn-primary w-full bg-sky-500 text-xl text-white border-inherit ">Calculate</button>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Rectangle Card -->
+                    <div id="rectangle-body" class="card bg-base-100 border-2 border-grey-700 px-4 py-2 rounded-md">
+                        <figure class="h-1/2">
+                            <img src="./images/rectangle.png" alt="Rectangle" />
+                        </figure>
+                        <div class="card-body space-y-1 h-1/2 mb-4">
+                            <div class="grid justify-center">
+                                <h2 class="card-title justify-center text-3xl">Rectangle</h2>
+                                <p class="mt-2 text-base ml-2">Area(A) = w ✕ l</p>
+                            </div>
+                            <div class="flex pb-5">
+                                <input placeholder="w"
+                                    class="max-h-8 w-1/2 rounded-[7px] border border-blue-gray-200 bg-gray-100 px-3 py-2.5 font-sans text-sm font-normal" id="rectangle-width"/>
+                                <h3 class="mx-2 mt-1">cm</h3>
+                                <input placeholder="l"
+                                    class="max-h-8 w-1/2 rounded-[7px] border border-blue-gray-200 bg-gray-100 px-3 py-2.5 font-sans text-sm font-normal" id="rectangle-length" />
+                                <h3 class="mx-2 mt-1">cm</h3>
+                            </div>
+                            <h3 class="text-center text-2xl">Area: <span id="rectangle-area">cm²</span></h3>
+                            <div class="card-actions justify-end">
+                                <button onclick="calculateRectangleArea()"
+                                    class="btn btn-primary w-full bg-sky-500 text-xl text-white border-inherit ">Calculate</button>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Parallelogram Card -->
+                    <div class="card bg-base-100 border-2 border-grey-700 px-4 py-2 rounded-md">
+                        <figure class="h-1/2">
+                            <img src="./images/parallelogram.png" alt="Parallelogram" />
+                        </figure>
+                        <div class="card-body space-y-1 h-1/2 mb-4">
+                            <div class="grid justify-center">
+                                <h2 class="card-title justify-center text-3xl">Parallelogram</h2>
+                                <p class="mt-2 text-base ml-5">Area(A) = b ✕ h</p>
+                            </div>
+                            <div class="flex pb-5">
+                                <input placeholder="b"
+                                    class="max-h-8 w-1/2 rounded-[7px] border border-blue-gray-200 bg-gray-100 px-3 py-2.5 font-sans text-sm font-normal" />
+                                <h3 class="mx-2 mt-1">cm</h3>
+                                <input placeholder="h"
+                                    class="max-h-8 w-1/2 rounded-[7px] border border-blue-gray-200 bg-gray-100 px-3 py-2.5 font-sans text-sm font-normal" />
+                                <h3 class="mx-2 mt-1">cm</h3>
+                            </div>
+                            <h3 class="text-center text-2xl">Area: cm²</h3>
+                            <div class="card-actions justify-end">
+                                <button
+                                    class="btn btn-primary w-full bg-sky-500 text-xl text-white border-inherit ">Calculate</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Rhombus Container -->
+                    <div class="card bg-base-100 border-2 border-grey-700 px-4 py-2 rounded-md">
+                        <figure class="h-1/2">
+                            <img src="./images/rhombus.png" alt="Rhombus" />
+                        </figure>
+                        <div class="card-body space-y-1 h-1/2 mb-4">
+                            <div class="grid justify-center">
+                                <h2 class="card-title justify-center text-3xl">Rhombus</h2>
+                                <p class="mt-2 text-base">Area(A) = 0.5 ✕ d1 ✕ d2</p>
+                                <div class="flex gap-4 mt-4 ml-3">
+                                <h2>d1=16cm</h2>
+                                <h2>d2=16cm</h2>
+                            </div>
+                            </div>
+                            <h3 class="text-center text-2xl">Area: cm²</h3>
+                            
+                            <div class="card-actions justify-end">
+                                <button
+                                    class="btn btn-primary w-full bg-sky-500 text-xl text-white border-inherit mt-6 lg:mt-0">Calculate</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Pentagon Container -->
+                    <div class="card bg-base-100 border-2 border-grey-700 px-4 py-2 rounded-md">
+                        <figure class="h-1/2">
+                            <img src="./images/pentagon.png" alt="Pentagon" />
+                        </figure>
+                        <div class="card-body space-y-1 h-1/2 mb-4">
+                            <div class="grid justify-center">
+                                <h2 class="card-title justify-center text-3xl">Pentagon</h2>
+                                <p class="mt-2 text-base">Area(A) = 0.5 ✕ p ✕ b</p>
+                                <div class="flex gap-4 mt-4 ml-3">
+                                <h2>p=6cm</h2>
+                                <h2>b=10cm</h2>
+                            </div>
+                            </div>
+                            <h3 class="text-center text-2xl">Area: cm²</h3>
+                            
+                            <div class="card-actions justify-end">
+                                <button
+                                    class="btn btn-primary w-full bg-sky-500 text-xl text-white border-inherit ">Calculate</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Ellipse Container -->
+                    <div class="card bg-base-100 border-2 border-grey-700 px-4 py-2 rounded-md">
+                        <figure class="h-1/2">
+                            <img src="./images/ellipse.png" alt="Ellipse" />
+                        </figure>
+                        <div class="card-body space-y-1 h-1/2 mb-4">
+                            <div class="grid justify-center">
+                                <h2 class="card-title justify-center text-3xl">Ellipse</h2>
+                                <p class="mt-2 text-base ml-2">Area(A) = πab </p>
+                                <div class="flex gap-4 mt-4">
+                                <h2>p=6cm</h2>
+                                <h2>b=10cm</h2>
+                            </div>
+                            </div>
+                            <h3 class="text-center text-2xl">Area: cm²</h3>
+                            
+                            <div class="card-actions justify-end">
+                                <button
+                                    class="btn btn-primary w-full bg-sky-500 text-xl text-white border-inherit ">Calculate</button>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+                <!-- Area Container -->
+                <div id="result-container" class="lg:w-96 border-2 border-grey-700 px-4 py-2 rounded-md ">
+                    <h3 class="text-xl underline text-center">Area Calculation</h3>
+                    <!-- <div class="card-actions justify-end">
+                        <button id="convert-button"
+                            class="btn btn-primary p-1 w-28 max-h-3 bg-sky-500 text-sm text-white border-inherit hidden" >Convert to m²</button>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="./scripts.js/triangle.js"></script>
+    <script src="./scripts.js/rectangle.js"></script>
+</body>
+
+</html>
