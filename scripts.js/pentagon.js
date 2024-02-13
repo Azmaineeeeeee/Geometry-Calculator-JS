@@ -19,3 +19,7 @@ const perimeter = getInputValue('pentagon-perimeter');
   document.getElementById('pentagon-body').addEventListener('mouseout',function(){
     this.style.backgroundColor = '';
   })
+
+  function pentagonInputEmpty(){
+    inputEmpty('pentagon-perimeter','pentagon-apothem','pentagon-area');
+  }

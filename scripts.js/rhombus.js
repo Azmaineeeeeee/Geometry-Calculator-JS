@@ -9,10 +9,9 @@ function calculateRhombusArea(){
     p.innerText = `${count++}.   Rhombus   ${rhombusArea}cm²`
     result.appendChild(p);
 
-   
-  
-  }
+ }
 
+ 
   document.getElementById('rhombus-body').addEventListener('mouseover',function(){
     this.style.backgroundColor = 'Orchid';
   })
@@ -20,3 +19,7 @@ function calculateRhombusArea(){
   document.getElementById('rhombus-body').addEventListener('mouseout',function(){
     this.style.backgroundColor = '';
   })
+
+  function rhombusInputEmpty(){
+    inputEmpty('rhombus-depth1','rhombus-depth2','rhombus-area');
+  }

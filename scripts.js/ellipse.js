@@ -18,5 +18,8 @@ function calculateEllipseArea(){
         this.style.backgroundColor = '';
       })
 
+      function ellipseInputEmpty(){
+        inputEmpty('minor-height','major-height','ellipse-area');
+      }
 
   

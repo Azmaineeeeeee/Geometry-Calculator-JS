@@ -20,6 +20,10 @@ document.getElementById('parallelogram-body').addEventListener('mouseout',functi
   this.style.backgroundColor = '';
 })
 
+function parallelogramInputEmpty(){
+  inputEmpty('parallelogram-base','parallelogram-height','parallelogram-area');
+}
+
 function getInputValue(inputId){
    const input = document.getElementById(inputId);
    const inputText = input.value;

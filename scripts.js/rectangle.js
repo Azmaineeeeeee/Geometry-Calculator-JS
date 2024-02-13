@@ -28,3 +28,7 @@ document.getElementById('rectangle-body').addEventListener('mouseover',function(
   document.getElementById('rectangle-body').addEventListener('mouseout',function(){
     this.style.backgroundColor = '';
   })
+
+  function rectangleInputEmpty(){
+    inputEmpty('rectangle-width','rectangle-length','rectangle-area');
+  }

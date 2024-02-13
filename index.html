@@ -48,11 +48,19 @@
                                     class="max-h-8 w-1/2 rounded-[7px] border border-blue-gray-200 bg-gray-100 px-3 py-2.5 font-sans text-sm font-normal" id="triangle-height" />
                                 <h3 class="mx-2 mt-1">cm</h3>
                             </div>
-                            <h3 class="text-center text-2xl">Area: <span id="area-triangle">cm²</span></h3>
+                            <h3 class="text-center text-2xl">Area: <span id="area-triangle"></span><span>cm²</span></h3>
+
+                        <div id="button-container" class="flex justify-between">
                             <div class="card-actions justify-end">
                                 <button onclick="calculateTriangleArea()"
                                     class="btn btn-primary w-full bg-sky-500 text-xl text-white border-inherit mb-5 ">Calculate</button>
                             </div>
+                            <div class="card-actions justify-end">
+                                <button onclick="triangleInputEmpty()"
+                                    class="btn btn-primary w-full bg-red-800 text-xl text-white border-inherit mb-5 ">Reset</button>
+                            </div>
+                        </div>
+
                         </div>
                     </div>
     
@@ -74,10 +82,16 @@
                                     class="max-h-8 w-1/2 rounded-[7px] border border-blue-gray-200 bg-gray-100 px-3 py-2.5 font-sans text-sm font-normal" id="rectangle-length" />
                                 <h3 class="mx-2 mt-1">cm</h3>
                             </div>
-                            <h3 class="text-center text-2xl">Area: <span id="rectangle-area">cm²</span></h3>
-                            <div class="card-actions justify-end">
-                                <button onclick="calculateRectangleArea()"
-                                    class="btn btn-primary w-full bg-sky-500 text-xl text-white border-inherit mb-5">Calculate</button>
+                            <h3 class="text-center text-2xl">Area: <span id="rectangle-area"></span><span>cm²</span></h3>
+                            <div id="button-container" class="flex justify-between">
+                                <div class="card-actions justify-end">
+                                    <button onclick="calculateRectangleArea()"
+                                        class="btn btn-primary w-full bg-sky-500 text-xl text-white border-inherit mb-5 ">Calculate</button>
+                                </div>
+                                <div class="card-actions justify-end">
+                                    <button onclick="rectangleInputEmpty()"
+                                        class="btn btn-primary w-full bg-red-800 text-xl text-white border-inherit mb-5 ">Reset</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -101,9 +115,15 @@
                                 <h3 class="mx-2 mt-1">cm</h3>
                             </div>
                             <h3 class="text-center text-2xl">Area: <span id="parallelogram-area"></span><span>cm²</span></h3>
-                            <div class="card-actions justify-end">
-                                <button onclick="calculateParallelogramArea()"
-                                    class="btn btn-primary w-full bg-sky-500 text-xl text-white border-inherit mb-5">Calculate</button>
+                            <div id="button-container" class="flex justify-between">
+                                <div class="card-actions justify-end">
+                                    <button onclick="calculateParallelogramArea()"
+                                        class="btn btn-primary w-full bg-sky-500 text-xl text-white border-inherit mb-5 ">Calculate</button>
+                                </div>
+                                <div class="card-actions justify-end">
+                                    <button onclick=" parallelogramInputEmpty()"
+                                        class="btn btn-primary w-full bg-red-800 text-xl text-white border-inherit mb-5 ">Reset</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -127,9 +147,15 @@
                             </div>
                             <h3 class="text-center text-2xl">Area: <span id="rhombus-area"></span><span>cm²</span></h3>
                             
-                            <div class="card-actions justify-end">
-                                <button onclick="calculateRhombusArea()"
-                                    class="btn btn-primary w-full bg-sky-500 text-xl text-white border-inherit mt-6 mb-5 lg:mt-0">Calculate</button>
+                            <div id="button-container" class="flex justify-between">
+                                <div class="card-actions justify-end">
+                                    <button onclick="calculateRhombusArea()"
+                                        class="btn btn-primary w-full bg-sky-500 text-xl text-white border-inherit mb-5 ">Calculate</button>
+                                </div>
+                                <div class="card-actions justify-end">
+                                    <button onclick="rhombusInputEmpty()"
+                                        class="btn btn-primary w-full bg-red-800 text-xl text-white border-inherit mb-5 ">Reset</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -154,9 +180,15 @@
                             </div>
                             <h3 class="text-center text-2xl">Area: <span id="pentagon-area"></span><span>cm²</span></h3>
                             
-                            <div class="card-actions justify-end">
-                                <button onclick="calculatePentagonArea()"
-                                    class="btn btn-primary w-full bg-sky-500 text-xl text-white border-inherit mb-5">Calculate</button>
+                            <div id="button-container" class="flex justify-between">
+                                <div class="card-actions justify-end">
+                                    <button onclick="calculatePentagonArea()"
+                                        class="btn btn-primary w-full bg-sky-500 text-xl text-white border-inherit mb-5 ">Calculate</button>
+                                </div>
+                                <div class="card-actions justify-end">
+                                    <button onclick="pentagonInputEmpty()"
+                                        class="btn btn-primary w-full bg-red-800 text-xl text-white border-inherit mb-5 ">Reset</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -180,9 +212,15 @@
                             </div>
                             <h3 class="text-center text-2xl">Area: <span id="ellipse-area"></span><span>cm²</span></h3>
                             
-                            <div class="card-actions justify-end">
-                                <button onclick="calculateEllipseArea()"
-                                    class="btn btn-primary w-full bg-sky-500 text-xl text-white border-inherit mb-5 ">Calculate</button>
+                            <div id="button-container" class="flex justify-between">
+                                <div class="card-actions justify-end">
+                                    <button onclick="calculateEllipseArea()"
+                                        class="btn btn-primary w-full bg-sky-500 text-xl text-white border-inherit mb-5 ">Calculate</button>
+                                </div>
+                                <div class="card-actions justify-end">
+                                    <button onclick="ellipseInputEmpty()"
+                                        class="btn btn-primary w-full bg-red-800 text-xl text-white border-inherit mb-5 ">Reset</button>
+                                </div>
                             </div>
                         </div>
                     </div>

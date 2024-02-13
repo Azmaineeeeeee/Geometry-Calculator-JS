@@ -16,6 +16,7 @@ function calculateTriangleArea() {
     let p = document.createElement('p');
     p.innerText = `${count++}.    Triangle  ${triangleArea}cm²`
     result.appendChild(p);
+
     const divResult = document.getElementById('area-triangle');
     let span = document.createElement('span');
     span.innerText = triangleArea;
@@ -32,3 +33,14 @@ document.getElementById('triangle-body').addEventListener('mouseover',function()
   document.getElementById('triangle-body').addEventListener('mouseout',function(){
     this.style.backgroundColor = '';
   })
+
+function triangleInputEmpty(){
+  inputEmpty('triangle-base','triangle-height','area-triangle');
+ }
+
+  function inputEmpty(a,b,c){
+    document.getElementById(a).value = '';
+    document.getElementById(b).value = '';
+    document.getElementById(c).textContent = '';
+    return;
+  }
