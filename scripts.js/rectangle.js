@@ -18,5 +18,13 @@ function calculateRectangleArea(){
     let p = document.createElement('p');
     p.innerText = `${count++}.    Rectangle  ${rectangleArea}cm²`
     result.appendChild(p);
-    document.getElementById('rectangle-body').style.backgroundColor = 'DarkSalmon'
+   
 }
+
+document.getElementById('rectangle-body').addEventListener('mouseover',function(){
+    this.style.backgroundColor = 'DarkSalmon';
+  })
+
+  document.getElementById('rectangle-body').addEventListener('mouseout',function(){
+    this.style.backgroundColor = '';
+  })

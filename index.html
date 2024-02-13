@@ -51,7 +51,7 @@
                             <h3 class="text-center text-2xl">Area: <span id="area-triangle">cm²</span></h3>
                             <div class="card-actions justify-end">
                                 <button onclick="calculateTriangleArea()"
-                                    class="btn btn-primary w-full bg-sky-500 text-xl text-white border-inherit ">Calculate</button>
+                                    class="btn btn-primary w-full bg-sky-500 text-xl text-white border-inherit mb-5 ">Calculate</button>
                             </div>
                         </div>
                     </div>
@@ -77,13 +77,13 @@
                             <h3 class="text-center text-2xl">Area: <span id="rectangle-area">cm²</span></h3>
                             <div class="card-actions justify-end">
                                 <button onclick="calculateRectangleArea()"
-                                    class="btn btn-primary w-full bg-sky-500 text-xl text-white border-inherit ">Calculate</button>
+                                    class="btn btn-primary w-full bg-sky-500 text-xl text-white border-inherit mb-5">Calculate</button>
                             </div>
                         </div>
                     </div>
     
                     <!-- Parallelogram Card -->
-                    <div class="card bg-base-100 border-2 border-grey-700 px-4 py-2 rounded-md">
+                    <div id = 'parallelogram-body' class= "card bg-base-100 border-2 border-grey-700 px-4 py-2 rounded-md">
                         <figure class="h-1/2">
                             <img src="./images/parallelogram.png" alt="Parallelogram" />
                         </figure>
@@ -94,82 +94,95 @@
                             </div>
                             <div class="flex pb-5">
                                 <input placeholder="b"
-                                    class="max-h-8 w-1/2 rounded-[7px] border border-blue-gray-200 bg-gray-100 px-3 py-2.5 font-sans text-sm font-normal" />
+                                    class="max-h-8 w-1/2 rounded-[7px] border border-blue-gray-200 bg-gray-100 px-3 py-2.5 font-sans text-sm font-normal" id="parallelogram-base" />
                                 <h3 class="mx-2 mt-1">cm</h3>
                                 <input placeholder="h"
-                                    class="max-h-8 w-1/2 rounded-[7px] border border-blue-gray-200 bg-gray-100 px-3 py-2.5 font-sans text-sm font-normal" />
+                                    class="max-h-8 w-1/2 rounded-[7px] border border-blue-gray-200 bg-gray-100 px-3 py-2.5 font-sans text-sm font-normal" id="parallelogram-height"/>
                                 <h3 class="mx-2 mt-1">cm</h3>
                             </div>
-                            <h3 class="text-center text-2xl">Area: cm²</h3>
+                            <h3 class="text-center text-2xl">Area: <span id="parallelogram-area"></span><span>cm²</span></h3>
                             <div class="card-actions justify-end">
-                                <button
-                                    class="btn btn-primary w-full bg-sky-500 text-xl text-white border-inherit ">Calculate</button>
+                                <button onclick="calculateParallelogramArea()"
+                                    class="btn btn-primary w-full bg-sky-500 text-xl text-white border-inherit mb-5">Calculate</button>
                             </div>
                         </div>
                     </div>
                     <!-- Rhombus Container -->
-                    <div class="card bg-base-100 border-2 border-grey-700 px-4 py-2 rounded-md">
+                    <div id="rhombus-body" class="card bg-base-100 border-2 border-grey-700 px-4 py-2 rounded-md">
                         <figure class="h-1/2">
-                            <img src="./images/rhombus.png" alt="Rhombus" />
+                            <img src="./images/rhombus.png" alt="Rhombus"/>
                         </figure>
                         <div class="card-body space-y-1 h-1/2 mb-4">
                             <div class="grid justify-center">
                                 <h2 class="card-title justify-center text-3xl">Rhombus</h2>
-                                <p class="mt-2 text-base">Area(A) = 0.5 ✕ d1 ✕ d2</p>
-                                <div class="flex gap-4 mt-4 ml-3">
-                                <h2>d1=16cm</h2>
-                                <h2>d2=16cm</h2>
+                                <p class="mt-2 text-base mb-2 text-center">Area(A) = 0.5 ✕ d1 ✕ d2</p>
+                                <div class="flex pb-5">
+                                    <input placeholder="d1"
+                                        class="max-h-8 w-1/2 rounded-[7px] border border-blue-gray-200 bg-gray-100 px-3 py-2.5 font-sans text-sm font-normal" id="rhombus-depth1" />
+                                    <h3 class="mx-2 mt-1">cm</h3>
+                                    <input placeholder="d2"
+                                        class="max-h-8 w-1/2 rounded-[7px] border border-blue-gray-200 bg-gray-100 px-3 py-2.5 font-sans text-sm font-normal" id="rhombus-depth2"/>
+                                    <h3 class="mx-2 mt-1">cm</h3>
+                                </div>
                             </div>
-                            </div>
-                            <h3 class="text-center text-2xl">Area: cm²</h3>
+                            <h3 class="text-center text-2xl">Area: <span id="rhombus-area"></span><span>cm²</span></h3>
                             
                             <div class="card-actions justify-end">
-                                <button
-                                    class="btn btn-primary w-full bg-sky-500 text-xl text-white border-inherit mt-6 lg:mt-0">Calculate</button>
+                                <button onclick="calculateRhombusArea()"
+                                    class="btn btn-primary w-full bg-sky-500 text-xl text-white border-inherit mt-6 mb-5 lg:mt-0">Calculate</button>
                             </div>
                         </div>
                     </div>
                     <!-- Pentagon Container -->
-                    <div class="card bg-base-100 border-2 border-grey-700 px-4 py-2 rounded-md">
+                    <div id="pentagon-body" class="card bg-base-100 border-2 border-grey-700 px-4 py-2 rounded-md">
                         <figure class="h-1/2">
                             <img src="./images/pentagon.png" alt="Pentagon" />
                         </figure>
                         <div class="card-body space-y-1 h-1/2 mb-4">
                             <div class="grid justify-center">
                                 <h2 class="card-title justify-center text-3xl">Pentagon</h2>
-                                <p class="mt-2 text-base">Area(A) = 0.5 ✕ p ✕ b</p>
-                                <div class="flex gap-4 mt-4 ml-3">
-                                <h2>p=6cm</h2>
-                                <h2>b=10cm</h2>
+                                <p class="mt-2 text-base mb-2 text-center">Area(A) = 0.5 ✕ p ✕ b</p>
+                                <div class="flex pb-5">
+                                    <input placeholder="p"
+                                        class="max-h-8 w-1/2 rounded-[7px] border border-blue-gray-200 bg-gray-100 px-3 py-2.5 font-sans text-sm font-normal" id = 'pentagon-perimeter'
+                                        />
+                                    <h3 class="mx-2 mt-1">cm</h3>
+                                    <input placeholder="a"
+                                        class="max-h-8 w-1/2 rounded-[7px] border border-blue-gray-200 bg-gray-100 px-3 py-2.5 font-sans text-sm font-normal" id = 'pentagon-apothem'/>
+                                    <h3 class="mx-2 mt-1">cm</h3>
+                                </div>
                             </div>
-                            </div>
-                            <h3 class="text-center text-2xl">Area: cm²</h3>
+                            <h3 class="text-center text-2xl">Area: <span id="pentagon-area"></span><span>cm²</span></h3>
                             
                             <div class="card-actions justify-end">
-                                <button
-                                    class="btn btn-primary w-full bg-sky-500 text-xl text-white border-inherit ">Calculate</button>
+                                <button onclick="calculatePentagonArea()"
+                                    class="btn btn-primary w-full bg-sky-500 text-xl text-white border-inherit mb-5">Calculate</button>
                             </div>
                         </div>
                     </div>
                     <!-- Ellipse Container -->
-                    <div class="card bg-base-100 border-2 border-grey-700 px-4 py-2 rounded-md">
+                    <div id="ellipse-body" class="card bg-base-100 border-2 border-grey-700 px-4 py-2 rounded-md">
                         <figure class="h-1/2">
                             <img src="./images/ellipse.png" alt="Ellipse" />
                         </figure>
                         <div class="card-body space-y-1 h-1/2 mb-4">
                             <div class="grid justify-center">
                                 <h2 class="card-title justify-center text-3xl">Ellipse</h2>
-                                <p class="mt-2 text-base ml-2">Area(A) = πab </p>
-                                <div class="flex gap-4 mt-4">
-                                <h2>p=6cm</h2>
-                                <h2>b=10cm</h2>
+                                <p class="mt-2 text-base mb-2 text-center">Area(A) = πab </p>
+                                <div class="flex pb-5">
+                                    <input placeholder="a"
+                                        class="max-h-8 w-1/2 rounded-[7px] border border-blue-gray-200 bg-gray-100 px-3 py-2.5 font-sans text-sm font-normal" id="minor-height" />
+                                    <h3 class="mx-2 mt-1">cm</h3>
+                                    <input placeholder="b"
+                                        class="max-h-8 w-1/2 rounded-[7px] border border-blue-gray-200 bg-gray-100 px-3 py-2.5 font-sans text-sm font-normal" id="major-height"/>
+                                    <h3 class="mx-2 mt-1">cm</h3>
+                                </div>
                             </div>
-                            </div>
-                            <h3 class="text-center text-2xl">Area: cm²</h3>
+                            <h3 class="text-center text-2xl">Area: <span id="ellipse-area"></span><span>cm²</span></h3>
                             
                             <div class="card-actions justify-end">
-                                <button
-                                    class="btn btn-primary w-full bg-sky-500 text-xl text-white border-inherit ">Calculate</button>
+                                <button onclick="calculateEllipseArea()"
+                                    class="btn btn-primary w-full bg-sky-500 text-xl text-white border-inherit mb-5 ">Calculate</button>
                             </div>
                         </div>
                     </div>
@@ -188,6 +201,10 @@
     </main>
     <script src="./scripts.js/triangle.js"></script>
     <script src="./scripts.js/rectangle.js"></script>
+    <script src="./scripts.js/parallelogram.js"></script>
+    <script src="./scripts.js/rhombus.js"></script>
+    <script src="./scripts.js/pentagon.js"></script>
+    <script src="./scripts.js/ellipse.js"></script>
 </body>
 
 </html>
